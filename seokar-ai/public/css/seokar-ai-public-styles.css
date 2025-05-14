@@ -1,0 +1,130 @@
+/**
+ * SeoKar AI Public Styles
+ *
+ * Styles for the AI suggestion icon and modal on the front-end.
+ */
+
+/* --- Floating Trigger Button --- */
+#seokar-ai-public-trigger-wrapper {
+    /* Position is set inline in PHP for `position: fixed` */
+    /* z-index is set inline in PHP */
+}
+
+#seokar-ai-public-trigger-btn {
+    /* Base styles are set inline in PHP for critical layout */
+    /* (background, color, border, border-radius, width, height, font-size, cursor, box-shadow, display, align-items, justify-content) */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#seokar-ai-public-trigger-btn:hover {
+    background-color: #13709e !important; /* Darken the blue on hover */
+    transform: scale(1.1);
+}
+
+#seokar-ai-public-trigger-btn .dashicons {
+    /* Styles for dashicon are mostly inline, ensure vertical alignment if needed */
+    /* line-height might need adjustment if icon isn't centered */
+}
+
+
+/* --- Modal --- */
+#seokar-ai-public-modal {
+    /* Base styles (display, position, top, left, width, height, background, z-index, padding, box-sizing, display flex, align-items, justify-content) */
+    /* are set inline in PHP for reliable overlay behavior. */
+    /* This ensures the modal covers the screen and centers its content box. */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; /* Standard WP font stack */
+    color: #333;
+    line-height: 1.6;
+}
+
+.seokar-ai-modal-content { /* The white box inside the modal overlay */
+    /* Base styles (background, padding, border-radius, max-width, width, margin, max-height, overflow-y, box-shadow, position) */
+    /* are set inline in PHP. */
+    animation: seokar-ai-modal-fadein 0.3s ease-out;
+}
+
+@keyframes seokar-ai-modal-fadein {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.seokar-ai-modal-content h2 {
+    /* Base styles (margin-top, margin-bottom, border-bottom, padding-bottom) are inline. */
+    font-size: 22px;
+    color: #1d2327; /* WordPress dark gray */
+    font-weight: 600;
+}
+
+#seokar-ai-public-modal-close {
+    /* Base styles (position, top, right, background, border, font-size, cursor, color) are inline. */
+    transition: color 0.2s ease;
+}
+
+#seokar-ai-public-modal-close:hover {
+    color: #000 !important;
+}
+
+#seokar-ai-public-modal-spinner {
+    /* Default WordPress spinner is fine, ensure it's centered */
+    /* visibility is controlled by JS */
+    margin: 20px auto !important;
+    display: block; /* To allow margin auto to work */
+}
+#seokar-ai-public-modal-spinner.is-active {
+    visibility: visible;
+}
+
+#seokar-ai-public-modal-body {
+    /* min-height is inline */
+    font-size: 14px;
+}
+
+#seokar-ai-public-modal-body p {
+    margin-bottom: 1em;
+}
+#seokar-ai-public-modal-body ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+#seokar-ai-public-modal-body li {
+    margin-bottom: 0.5em;
+}
+#seokar-ai-public-modal-body h3 {
+    font-size: 18px;
+    margin-top: 1.5em;
+    margin-bottom: 0.7em;
+    color: #2c3338;
+}
+#seokar-ai-public-modal-body strong {
+    font-weight: 600;
+    color: #1d2327;
+}
+
+#seokar-ai-public-modal-body small { /* For debug text or minor notes */
+    display: block;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #eee;
+    color: #666;
+    font-style: italic;
+    font-size: 0.9em;
+    word-break: break-all;
+}
+
+/* Error Message Styling in Modal */
+#seokar-ai-public-modal-body .seokar-ai-error {
+    color: #b91c1c; /* A suitable red for errors */
+    font-weight: 500;
+    background-color: #fee2e2;
+    padding: 10px 15px;
+    border: 1px solid #fca5a5;
+    border-radius: 4px;
+    margin-bottom: 1em;
+}
