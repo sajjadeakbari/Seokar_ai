@@ -1,0 +1,127 @@
+/**
+ * SeoKar AI Admin Styles
+ *
+ * Styles for the SeoKar AI metabox and settings page.
+ */
+
+/* --- Settings Page --- */
+.seokar-ai-settings-wrap .seokar-ai-plugin-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+}
+
+.seokar-ai-settings-wrap .seokar-ai-plugin-info h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.seokar-ai-settings-wrap .seokar-ai-plugin-info p {
+    margin-bottom: 0.5em;
+}
+
+
+/* --- Editor Metabox --- */
+#seokar_ai_suggestions_metabox .inside {
+    padding-top: 0; /* WordPress adds its own padding, adjust if needed */
+}
+
+#seokar-ai-metabox-content {
+    padding: 12px; /* Add some internal padding */
+}
+
+#seokar-ai-metabox-content p {
+    margin-bottom: 10px; /* Space between button paragraphs */
+}
+
+#seokar-ai-metabox-content .button.seokar-ai-action-btn {
+    width: 100%; /* Make main action buttons full width */
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+#seokar-ai-metabox-content .button.seokar-ai-action-btn:last-of-type {
+    margin-bottom: 10px; /* More space before spinner/results */
+}
+
+/* Spinner Styling */
+#seokar-ai-metabox-spinner {
+    /* Default WordPress spinner is fine, but ensure it's centered if 'float:none' is used in PHP */
+    /* visibility: hidden; is controlled by JS */
+    margin: 10px auto !important; /* Center the spinner if it's a block element */
+    display: block; /* Ensure it takes up space to center with auto margins */
+}
+#seokar-ai-metabox-spinner.is-active { /* WordPress uses is-active for visibility */
+    visibility: visible;
+}
+
+
+/* Results Area Styling */
+#seokar-ai-metabox-results {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fdfdfd;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    min-height: 50px; /* Ensure it has some height even when empty initially */
+    max-height: 300px; /* Prevent it from becoming too tall */
+    overflow-y: auto;   /* Add scroll if content overflows */
+    line-height: 1.6;
+}
+
+#seokar-ai-metabox-results p,
+#seokar-ai-metabox-results ul,
+#seokar-ai-metabox-results h4 {
+    margin-bottom: 0.8em;
+}
+#seokar-ai-metabox-results ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+#seokar-ai-metabox-results small { /* For debug text or minor notes */
+    display: block;
+    margin-top: 10px;
+    color: #777;
+    font-style: italic;
+    font-size: 0.9em;
+    word-break: break-all; /* For long debug prompts */
+}
+
+/* Error Message Styling */
+#seokar-ai-metabox-results .seokar-ai-error,
+p.seokar-ai-error { /* For errors directly in results or standalone */
+    color: #d63638; /* WordPress error color */
+    font-weight: bold;
+    background-color: #fef2f2;
+    padding: 8px;
+    border: 1px solid #fecaca;
+    border-radius: 3px;
+}
+
+/* Action buttons within the results area */
+.seokar-ai-result-actions {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+}
+
+.seokar-ai-result-actions .button-small {
+    margin-right: 5px;
+    margin-bottom: 5px; /* For wrapping on small screens */
+}
+
+/* Disabled state for buttons (though WP adds its own .disabled styles) */
+.seokar-ai-action-btn.disabled,
+.seokar-ai-result-actions .button-small:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Specific message when API keys are not configured */
+#seokar-ai-metabox-content > p:first-child a {
+    /* Style the link within the "configure API keys" message if needed */
+    font-weight: bold;
+}
